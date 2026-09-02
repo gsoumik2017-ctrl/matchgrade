@@ -89,14 +89,53 @@
         <h2 style="font-size:1.4rem;margin-bottom:6px;">Send a Message</h2>
         <p style="color:var(--text-muted);font-size:0.94rem;margin-bottom:28px;">Fill this in and our team will reach out to schedule a walkthrough.</p>
 
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdmZlw-3Kut2KYUPJ5RvtjrwypH4kjQ67fnclIX1IEL763XQA/viewform?embedded=true" 
-          width="640" height="900" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0">
-          Loading…
-        </iframe>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jordan Rao" required />
+            </div>
+            <div class="field">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" name="org" placeholder="e.g. Greenfield School" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="you@institution.edu" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="role">I am a</label>
+            <select id="role" name="role">
+              <option>Sports Head / PE Teacher</option>
+              <option>Facilities / Admin Manager</option>
+              <option>Principal / Director</option>
+              <option>HR / Corporate Wellness</option>
+              <option>Vendor Partner</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">What's this about? <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Tell us about your institution, current equipment challenges, or which service (Care, Lease, Asset Management) you're interested in."></textarea>
+          </div>
+
+          <div class="field">
+            <div id="contact-hcaptcha"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+          <p class="form-note" id="form-status" role="status"></p>
+        </form>
       </div>
 
     </div>
